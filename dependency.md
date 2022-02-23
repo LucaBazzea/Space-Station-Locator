@@ -1,0 +1,3 @@
+## PIP
+- requests
+- geopy
