@@ -40,4 +40,4 @@ else:
 
 print(f"\nCoordinates: {latitude}, {longitude}")
 
-print(f"\nhttps://www.google.com/maps/place/{latitude},{longitude}")
+print(f"\nhttps://www.openstreetmap.org/#map=5/{latitude}/{longitude}")
