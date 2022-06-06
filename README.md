@@ -6,3 +6,4 @@ This application uses an API from http://open-notify.org/ and GeoPy to track the
 1.  ```
     pip install -r requirements.txt
     ```
+2. In ``.env`` add ``SECRET_KEY={your Django secret key}``
