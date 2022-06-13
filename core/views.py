@@ -44,7 +44,7 @@ print(f"\nCoordinates: {latitude}, {longitude}")
 
 def get_index(request):
 
-    map = folium.Map(location=[latitude, longitude], zoom_start=5, width=800, height=400)
+    map = folium.Map(location=[latitude, longitude], zoom_start=4, width=800, height=500)
     map = map._repr_html_() # Convert python notebook map into HTML
 
     context = {
