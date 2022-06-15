@@ -35,16 +35,26 @@ def get_address_by_coords(latitude, longitude):
 
 address = get_address_by_coords(latitude, longitude)
 
-if address == None:
-    print("The ISS is not above any geographical landmarks at the moment")
-else:
-    pprint(address)
-
 print(f"\nCoordinates: {latitude}, {longitude}")
+print(f"address :: {address}")
 
 def get_index(request):
 
-    map = folium.Map(location=[latitude, longitude], zoom_start=4, width=800, height=500)
+    map = folium.Map(location=[latitude, longitude], zoom_start=4, width=1000, height=550)
+    
+    if address == None:
+        marker_popup = f"{latitude},<br>{longitude}"
+    else:
+        marker_popup = address
+
+    icon_iss = folium.features.CustomIcon("core/static/images/space-station.png", icon_size=(64,64))
+
+    folium.Marker(
+        [latitude, longitude],
+        popup=marker_popup,
+        icon=icon_iss
+        ).add_to(map)
+
     map = map._repr_html_() # Convert python notebook map into HTML
 
     context = {
